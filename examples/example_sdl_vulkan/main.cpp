@@ -279,7 +279,8 @@ static void FrameRender(ImGui_ImplVulkanH_Window* wd, ImDrawData* draw_data)
     }
 
     // Record dear imgui primitives into command buffer
-    ImGui_ImplVulkan_RenderDrawData(draw_data, fd->CommandBuffer);
+	ImGuiContext* current_ctx = ImGui::GetCurrentContext();
+    ImGui_ImplVulkan_RenderDrawData(draw_data, current_ctx, fd->CommandBuffer, wd->RenderPass, VK_SAMPLE_COUNT_1_BIT);
 
     // Submit command buffer
     vkCmdEndRenderPass(fd->CommandBuffer);
