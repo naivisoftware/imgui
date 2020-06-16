@@ -84,8 +84,8 @@ static VkPipelineCreateFlags		g_PipelineCreateFlags = 0x00;
 static VkDescriptorSetLayout		g_DescriptorSetLayout = VK_NULL_HANDLE;
 static VkDescriptorSet				g_FontDescriptorSet = VK_NULL_HANDLE;
 static VkPipelineLayout				g_PipelineLayout = VK_NULL_HANDLE;
-VkShaderModule						g_VertModule = VK_NULL_HANDLE;
-VkShaderModule						g_FragModule = VK_NULL_HANDLE;
+static VkShaderModule				g_VertModule = VK_NULL_HANDLE;
+static VkShaderModule				g_FragModule = VK_NULL_HANDLE;
 
 // Unique pipeline for every MXSAA flag
 static std::unordered_map<VkSampleCountFlagBits, VkPipeline> g_Pipelines;
